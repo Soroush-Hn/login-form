@@ -29,6 +29,11 @@ j(function () {
                         beforeShow: function () {
                         }, // will be triggered before the toast is shown
                         afterShown: function () {
+                            setTimeout(function () {
+                                // Use a publicly accessible URL for testing
+                                window.location.replace("http://localhost/phpstorm/jQuery/ajax/home.php");
+                                // redirect after 0.5 seconds
+                            }, 500);
                         }, // will be triggered after the toat has been shown
                         beforeHide: function () {
                         }, // will be triggered before the toast gets hidden
@@ -59,7 +64,7 @@ j(function () {
                     });
                 }
             },
-            error: function (error) {
+            error: function () {
                 j.toast({
                     text: "something went wrong please check your username and password", // Text that is to be shown in the toast
                     heading: "Note", // Optional heading to be shown on the toast
